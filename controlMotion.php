@@ -129,19 +129,6 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
 
                 <div class="row">
                     <div class="col-sm-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"> Config </h3>
-                            </div>
-                            <p>
-                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-primary" href="#"> List </a> </div>
-                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-primary" href="#"> Write </a> </div>
-                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-primary" href="#"> Set </a> </div>
-                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-primary" href="#"> Get </a> </div>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
                         <div class="panel panel-green">
                             <div class="panel-heading">
                                 <h3 class="panel-title"> Action </h3>
@@ -154,8 +141,8 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                             </p>
                         </div>
                     </div>
-                </div>
-                <div class="row">
+
+
                     <div class="col-sm-6">
                         <div class="panel panel-red">
                             <div class="panel-heading">
@@ -169,21 +156,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                             </p>
                         </div>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="panel panel-yellow">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"> Track </h3>
-                            </div>
-                            <p>
-                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-warning" href="#"> Set pan </a> </div>
-                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-warning" href="#"> Center </a> </div>
-                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-warning" href="#"> Auto </a> </div>
-                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-warning" href="#"> Status </a> </div>
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
+                </div> 
 
  
             <!-- 2eme maniere de faire    -->
