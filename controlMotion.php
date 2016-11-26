@@ -40,6 +40,8 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- File JavaScript contenant function pour controler motion -->
+    <script language="javascript" type="text/javascript" src="assets/js/popupConfigMotion.js"></script>
 
 </head>
 <body>
@@ -149,10 +151,10 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                 <h3 class="panel-title"> Detection </h3>
                             </div>
                             <p>
-                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" href="#"> Status </a> </div>
-                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" href="#"> Start </a> </div>
-                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" href="#"> Pause </a> </div>
-                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" href="#"> Connection </a> </div>
+                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" href="#" onclick="detectionStatus();sleep(500);">> Status </a> </div>
+                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" href="#" onclick="detectionStart();sleep(500);"> Start </a> </div> 
+                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" href="#" onclick="detectionStop();sleep(500);"> Pause </a> </div>
+                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" href="#" onclick="detectionConnection();sleep(500);"> Connection </a>
                             </p>
                         </div>
                     </div>
