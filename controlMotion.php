@@ -151,10 +151,9 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                 <h3 class="panel-title"> Detection </h3>
                             </div>
                             <p>
-                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" href="#" onclick="detectionStatus();sleep(500);"> Status </a> </div>
-                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" href="#" onclick="detectionStart();sleep(500);"> Start </a> </div> 
-                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" href="#" onclick="detectionStop();sleep(500);"> Pause </a> </div>
-                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" href="#" onclick="detectionConnection();sleep(500);"> Connection </a>
+                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" href="#" onclick="detectionStatus()"> Status </a> </div>
+                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" href="#" onclick="detectionStart()"> Start </a> </div> 
+                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" href="#" onclick="detectionStop()"> Pause </a> </div>
                             </p>
                         </div>
                     </div>
