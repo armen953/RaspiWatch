@@ -10,15 +10,15 @@ function sleep(milliseconds) {
 
 function detectionStart()
 {
-    /* a tester pour décider quelle méthode utiliser + modifier link évidemment */
-    var start = window.open('https://www.google.fr/','start','menubar=no, scrollbars=no, top=5000, left=5000, width=1, height=1');  
+    var start = window.open('http://172.23.40.235:8080/0/detection/start');  
+    sleep(10);
     start.close();
 }
 
 function detectionStop()
 {
-    /* a tester pour décider quelle méthode utiliser + modifier link évidemment */
-    var stop = window.open('https://www.google.fr/','stop','menubar=no, scrollbars=no, top=5000, left=5000, width=1, height=1');  
+    var stop = window.open('http://172.23.40.235:8080/0/detection/pause');  
+    sleep(10);
     stop.close();
 }
 
@@ -27,7 +27,16 @@ function detectionStatus()
         // à faire
 }
 
-function detectionConnection()
+function actionQuit()
 {
-        // à faire
+    var stop = window.open('http://172.23.40.235:8080/0/action/quit');
+    sleep(10);
+    stop.close();
+}
+
+function actionRestart()
+{
+	var restart = window.open('http://172.23.40.235:8080/0/action/restart');
+	sleep(10);
+	restart.close();
 }
