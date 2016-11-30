@@ -120,18 +120,15 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                 </div>
 
                 <div class="row">
-
-                	<div class="col-lg-3 col-md-6">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">
+                           <div class="panel-heading">
                                 <div class="row">
-                                    <div class="col-xs-9 text-right">
-                                   		<img class="motion" src="http://87.88.41.137:8081/?action=stream" />   <!-- a remplacer par motion -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+					<div class="embed-responsive embed-responsive-16by9">
+						<iframe class="embed-responsive-item" src="http://172.23.40.235:8081/?action=stream" scrolling="no" allowfullscreen></iframe>				
+                                	</div>
+                            	</div>
+                          </div>
+                    	</div>
 
 
 
