@@ -42,7 +42,8 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
     <![endif]-->
     <!-- File JavaScript contenant function pour controler motion -->
     <script language="javascript" type="text/javascript" src="assets/js/popupConfigMotion.js"></script>
-
+    <!-- Fichier CSS Button ON/OFF Motion -->
+    <link href="assets/css/buttonOnOffMotion.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -151,7 +152,19 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                 <h3 class="panel-title"> Detection </h3>
                             </div>
                             <p>
-                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" href="#" onclick="detectionStatus()"> Status </a> </div>
+                              <!-- <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" href="#" onclick="detectionStatus();"> Status </a> </div> -->           <div class="switch">
+                                  <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox">
+                                  <label for="cmn-toggle-1"></label>
+                                </div>
+                                <div class="switch">
+                                  <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+                                  <label for="cmn-toggle-4"></label>
+                                </div>
+
+                                <div class="switch">
+                                  <input id="cmn-toggle-7" class="cmn-toggle cmn-toggle-yes-no" type="checkbox">
+                                  <label for="cmn-toggle-7" data-on="Yes" data-off="No"></label>
+                                </div>   
                                 <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" href="#" onclick="detectionStart()"> Start </a> </div> 
                                 <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" href="#" onclick="detectionStop()"> Pause </a> </div>
                             </p>
