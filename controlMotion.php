@@ -170,22 +170,24 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                             <p>
                             
                                 <!--BOUTON ON/OFF-->
+                                
                             <div class="row">
                             <div class="row">
                             <div class="col-md-4"></div>
                             
-                            <div class ="col-md-4"> 
-                            
+                            <div class ="col-md-4">                           
                             <div class="flipswitch">
                             <input type="checkbox" name="flipswitch" class="flipswitch-cb" id="fs" checked>
                             <label class="flipswitch-label" for="fs">
                                 <div class="flipswitch-inner"></div>
                                 <div class="flipswitch-switch"></div>
                             </label>
-                            </div>    
-                            <div class="col-md-4"></div>
+                            </div>                                
                             </div>
-                            </div>                            
+                            
+                            <div class="col-md-4"></div>                           
+                            </div>  
+                                                         
                                 <!---------------->
                             <div class="row">
                                 <div class="col-md-6 text-center">
