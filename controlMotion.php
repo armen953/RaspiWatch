@@ -42,8 +42,9 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
     <![endif]-->
     <!-- File JavaScript contenant function pour controler motion -->
     <script language="javascript" type="text/javascript" src="assets/js/popupConfigMotion.js"></script>
-    <!-- Fichier CSS Button ON/OFF Motion -->
+    <!-- CSS button -->
     <link href="assets/css/buttonOnOffMotion.css" rel="stylesheet" type="text/css">
+	
 </head>
 <body>
 
@@ -68,7 +69,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
 	                    <span class="icon-bar"></span>
 	                </button>
 
-	                <a class="navbar-brand" href="index.html">Dashboard</a>
+	                <a class="navbar-brand" href="#">RaspiWatch</a>
 	        </div>
 
 	        <ul class="nav navbar-right top-nav">
@@ -97,13 +98,13 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
              <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li >
-                        <?php echo "<a href="."dashboard.php?id=".$userInfo['id']."><i class="."fa fa-fw fa-wrench"."></i> Dashboard</a>" ?>    <!-- PROBLEME SUR L'AFFICHAGE DE L'ICONE -->
+                        <?php echo "<a href="."dashboard.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>     <!-- PROBLEME SUR L'AFFICHAGE DE L'ICONE -->
                     </li>
                     <li class="active">
-                        <a href="#"><i class="fa fa-fw fa-wrench"></i> Config Motion</a>
+                        <?php echo "<a href="."controlMotion.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-wrench"></i> Config Motion</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-table"></i> Tables</a>
+                        <?php echo "<a href="."images.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-picture-o"></i> Images</a>
                     </li>
                 </ul>
             </div>
@@ -119,97 +120,87 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                         <h1 class="page-header">
                             Config Motion <small>Configuration de motion</small>
                         </h1>
+						<ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  <?php echo "<a href="."dashboard.php?id=".$userInfo['id']?> "> Dashboard</a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-wrench"></i> Config Motion
+                            </li>
+                        </ol>
                     </div>
                 </div>
 
-                <!-- 1er maniere de faire    -->
+                <!-- 1er maniere de faire 
                 <div class="row">
-                    <!-- retourenr le message de la commande fait  (par exemple)-->
                     <div class="alert alert-success">
                         <strong>Bonjour!</strong> afficher ici le retour de la commande.
                     </div>
-                </div>
+                </div>   -->
 
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="panel panel-green">
                             <div class="panel-heading">
-                                <h3 class="panel-title"> Action </h3>
+                                <h3 class="panel-title text-center"> Action </h3>
                             </div>
                             <p>
+                                <div class="row">
+                                <div class="col-md-6 text-center">
                                 <div class="panel-body"> <a type="button" class="btn btn-lg btn-success" href="#"> Make Move </a> </div>
                                 <div class="panel-body"> <a type="button" class="btn btn-lg btn-success" href="#"> Snapshot </a> </div>
-                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-success" href="#"> Restart </a> </div>
-                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-success" href="#"> Quit </a> </div>
+                                </div>
+
+                                <div class="col-md-6 text-center">
+                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-success" id="btnRestart" href=""> Restart </a> </div>
+                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-success" id="btnQuit" href=""> Quit </a> </div>
+                                </div>
+                                </div>
                             </p>
                         </div>
                     </div>
+
 
 
                     <div class="col-sm-6">
                         <div class="panel panel-red">
                             <div class="panel-heading">
-                                <h3 class="panel-title"> Detection </h3>
+                                <h3 class="panel-title text-center"> Detection </h3>
                             </div>
                             <p>
-                              <!-- <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" href="#" onclick="detectionStatus();"> Status </a> </div> -->           <div class="switch">
-                                  <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox">
-                                  <label for="cmn-toggle-1"></label>
+                            
+                                <!--BOUTON ON/OFF-->
+                            <div class="row">
+                            <div class="row">
+                            <div class="col-md-4"></div>
+                            
+                            <div class ="col-md-4"> 
+                            
+                            <div class="flipswitch">
+                            <input type="checkbox" name="flipswitch" class="flipswitch-cb" id="fs" checked>
+                            <label class="flipswitch-label" for="fs">
+                                <div class="flipswitch-inner"></div>
+                                <div class="flipswitch-switch"></div>
+                            </label>
+                            </div>    
+                            <div class="col-md-4"></div>
+                            </div>
+                            </div>                            
+                                <!---------------->
+                            <div class="row">
+                                <div class="col-md-6 text-center">
+                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" id="btnStart" href="#"> Start </a> </div> 
                                 </div>
-                                <div class="switch">
-                                  <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
-                                  <label for="cmn-toggle-4"></label>
+                                <div class="col-md-6 text-center">
+                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" id="btnStop" href="#"> Pause </a> </div>
                                 </div>
-
-                                <div class="switch">
-                                  <input id="cmn-toggle-7" class="cmn-toggle cmn-toggle-yes-no" type="checkbox">
-                                  <label for="cmn-toggle-7" data-on="Yes" data-off="No"></label>
-                                </div>   
-                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" href="#" onclick="detectionStart()"> Start </a> </div> 
-                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" href="#" onclick="detectionStop()"> Pause </a> </div>
                             </p>
                         </div>
                     </div>
                 </div> 
-
- 
-            <!-- 2eme maniere de faire    -->
-<!--
-                <div class="col-sm-4">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Panel title</h3>
-                            </div>
-                            <div class="panel-body">
-                                 <p>
-                                    <a type="button" href="#" class="btn btn-lg btn-default">Default</a>
-                                    <a type="button" href="#" class="btn btn-lg btn-primary">Primary</a>
-                                    <a type="button" href="#" class="btn btn-lg btn-success">Success</a>
-                                    <a type="button" href="#" class="btn btn-lg btn-info">Info</a>
-                                    <a type="button" href="#" class="btn btn-lg btn-warning">Warning</a>
-                                    <a type="button" href="#" class="btn btn-lg btn-danger">Danger</a>
-                                    <a type="button" href="#" class="btn btn-lg btn-link">Link</a>
-                                </p>
-                            </div>
-                        </div>
                 </div>
-
--->
-
-
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
 	</div>
 
 
@@ -238,3 +229,4 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
  }    // fermeture  de if numero 1
 
 	 ?>
+
