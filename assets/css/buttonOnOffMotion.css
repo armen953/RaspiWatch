@@ -1,75 +1,85 @@
 .flipswitch {
-  position: relative;
-  width: 190px;
-  -webkit-user-select:none;
-  -moz-user-select:none;
-  -ms-user-select: none;
+    position: relative;
+    width: 190px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
+
 .flipswitch input[type=checkbox] {
-  display: none;
+    display: none;
 }
+
 .flipswitch-label {
-  display: block;
-  overflow: hidden;
-  cursor: pointer;
-  border: 0px solid #222222;
-  border-radius: 50px;
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 0px solid #222222;
+    border-radius: 50px;
 }
+
 .flipswitch-inner {
-  width: 200%;
-  margin-left: -100%;
-  -webkit-transition: margin 0.3s ease-in 0s;
-  -moz-transition: margin 0.3s ease-in 0s;
-  -ms-transition: margin 0.3s ease-in 0s;
-  -o-transition: margin 0.3s ease-in 0s;
-  transition: margin 0.3s ease-in 0s;
+    width: 200%;
+    margin-left: -100%;
+    -webkit-transition: margin 0.3s ease-in 0s;
+    -moz-transition: margin 0.3s ease-in 0s;
+    -ms-transition: margin 0.3s ease-in 0s;
+    -o-transition: margin 0.3s ease-in 0s;
+    transition: margin 0.3s ease-in 0s;
 }
-.flipswitch-inner:before, .flipswitch-inner:after {
-  float: left;
-  width: 50%;
-  height: 50px;
-  padding: 0;
-  line-height: 50px;
-  font-size: 14px;
-  color: white;
-  font-family: Trebuchet, Arial, sans-serif;
-  font-weight: bold;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.flipswitch-inner:before {
-  content: "DETECTION ON";
-  padding-left: 12px;
-  background-color: #5CB85C;
-  color: #FFFFFF;
-}
+
+.flipswitch-inner:before,
 .flipswitch-inner:after {
-  content: "DETECTION OFF";
-  padding-right: 12px;
-  background-color: #D9534F;
-  color: #000000;
-  text-align: right;
+    float: left;
+    width: 50%;
+    height: 50px;
+    padding: 0;
+    line-height: 50px;
+    font-size: 14px;
+    color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
+
+.flipswitch-inner:before {
+    content: "DETECTION ON";
+    padding-left: 12px;
+    background-color: #5CB85C;
+    color: #FFFFFF;
+}
+
+.flipswitch-inner:after {
+    content: "DETECTION OFF";
+    padding-right: 12px;
+    background-color: #D9534F;
+    color: #000000;
+    text-align: right;
+}
+
 .flipswitch-switch {
-  width: 26px;
-  margin: 12px;
-  background: #FFFFFF;
-  border: 0px solid #222222;
-  border-radius: 50px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 138px;
-  -webkit-transition: all 0.3s ease-in 0s;
-  -moz-transition: all 0.3s ease-in 0s;
-  -ms-transition: all 0.3s ease-in 0s;
-  -o-transition: all 0.3s ease-in 0s;
-  transition: all 0.3s ease-in 0s;
+    width: 26px;
+    margin: 12px;
+    background: #FFFFFF;
+    border: 0px solid #222222;
+    border-radius: 50px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 138px;
+    -webkit-transition: all 0.3s ease-in 0s;
+    -moz-transition: all 0.3s ease-in 0s;
+    -ms-transition: all 0.3s ease-in 0s;
+    -o-transition: all 0.3s ease-in 0s;
+    transition: all 0.3s ease-in 0s;
 }
+
 .flipswitch-cb:checked + .flipswitch-label .flipswitch-inner {
-  margin-left: 0;
+    margin-left: 0;
 }
+
 .flipswitch-cb:checked + .flipswitch-label .flipswitch-switch {
-  right: 0;
+    right: 0;
 }
