@@ -8,9 +8,27 @@ function sleep(milliseconds) {
     }
 }
 
+/**** Load function des boutons ****/
+
+window.onload = function()
+{
+    var btnStart = document.getElementById("btnStart");
+    var btnStop = document.getElementById("btnStop");
+    var btnRestart = document.getElementById("btnRestart");
+    var btnQuit = document.getElementById("btnQuit");
+    btnStart.addEventListener("click", detectionStart);
+    btnStop.addEventListener("click", detectionStop);
+    btnRestart.addEventListener("click", actionRestart);
+    btnQuit.addEventListener("click", actionQuit);
+}
+
+/**********************************/
+
+/**** FUNCTION DES BOUTONS ****/
+
 function detectionStart()
 {
-    var start = window.open('http://172.23.40.235:8080/0/detection/start');  
+    var start = window.open('http://172.23.40.235:8080/0/detection/start);  
     sleep(10);
     start.close();
 }
@@ -20,11 +38,6 @@ function detectionStop()
     var stop = window.open('http://172.23.40.235:8080/0/detection/pause');  
     sleep(10);
     stop.close();
-}
-
-function detectionStatus()
-{
-        // à faire
 }
 
 function actionQuit()
@@ -40,3 +53,6 @@ function actionRestart()
 	sleep(10);
 	restart.close();
 }
+
+/****************************/
+
