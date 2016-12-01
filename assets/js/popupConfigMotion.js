@@ -1,4 +1,4 @@
-/* Function pour permettre le chargement complet la page pour réaliser l'action */
+/* function pour permettre le chargement complet la page pour réaliser l'action */
 function sleep(milliseconds) {
     var start = new Date().getTime();
     for (var i = 0; i < 1e7; i++) {
@@ -15,7 +15,9 @@ window.onload = function () {
     var btnStop = document.getElementById("btnStop");
     var btnRestart = document.getElementById("btnRestart");
     var btnQuit = document.getElementById("btnQuit");
-    btnStart.addEventListener("click", sapinDeNoel);
+    btnStart.addEventListener("click", buttonActionStart);
+    btnStart.addEventListener("click", detectionStart);
+    btnStop.addEventListener("click", buttonActionStop);
     btnStop.addEventListener("click", detectionStop);
     btnRestart.addEventListener("click", actionRestart);
     btnQuit.addEventListener("click", actionQuit);
@@ -26,35 +28,42 @@ window.onload = function () {
 /**** FUNCTION DES BOUTONS ****/
 
 function detectionStart() {
-    var start = window.open('http://172.23.40.235:8080/0/detection/start');  
-        sleep(10); start.close();
+    var start = window.open('http://172.23.40.235:8080/0/detection/start');
+    sleep(10);
+    start.close();
+}
+
+function detectionStop() {
+    var stop = window.open('http://172.23.40.235:8080/0/detection/pause');
+    sleep(10);
+    stop.close();
+}
+
+function actionQuit() {
+    var stop = window.open('http://172.23.40.235:8080/0/action/quit');
+    sleep(10);
+    stop.close();
+}
+
+function actionRestart() {
+    var restart = window.open('http://172.23.40.235:8080/0/action/restart');
+    sleep(10);
+    restart.close();
+}
+/****************************/
+
+/**** FUNCTION STATUS CHECKBOX CAPTURE MOTION ****/
+
+function buttonActionStart() {
+    if ((document.getElementById('fs').checked == false)) {
+        document.getElementById('fs').checked = true;
     }
+}
 
-    function detectionStop() {
-        var stop = window.open('http://172.23.40.235:8080/0/detection/pause');
-        sleep(10);
-        stop.close();
+function buttonActionStop() {
+    if ((document.getElementById('fs').checked == true)) {
+        document.getElementById('fs').checked = false;
     }
+}
 
-    function actionQuit() {
-        var stop = window.open('http://172.23.40.235:8080/0/action/quit');
-        sleep(10);
-        stop.close();
-    }
-
-    function actionRestart() {
-        var restart = window.open('http://172.23.40.235:8080/0/action/restart');
-        sleep(10);
-        restart.close();
-    }
-    /****************************/
-
-    function sapinDeNoel() {
-        if ((document.getElementById('fs').checked == false)) {
-            document.getElementById('fs').checked = true;
-
-        } else {
-            document.getElementById('fs').checked = false;
-        }
-
-    }
+/****************************/
