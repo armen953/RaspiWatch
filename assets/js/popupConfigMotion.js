@@ -28,7 +28,7 @@ window.onload = function()
 
 function detectionStart()
 {
-    var start = window.open('http://172.23.40.235:8080/0/detection/start);  
+    var start = window.open('http://172.23.40.235:8080/0/detection/start');  
     sleep(10);
     start.close();
 }
