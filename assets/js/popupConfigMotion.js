@@ -28,25 +28,25 @@ window.onload = function () {
 /**** FUNCTION DES BOUTONS ****/
 
 function detectionStart() {
-    var start = window.open('http://172.23.40.235:8080/0/detection/start');
+    var start = window.open('http://172.23.40.235:8080/1/detection/start');
     sleep(10);
     start.close();
 }
 
 function detectionStop() {
-    var stop = window.open('http://172.23.40.235:8080/0/detection/pause');
+    var stop = window.open('http://172.23.40.235:8080/1/detection/pause');
     sleep(10);
     stop.close();
 }
 
 function actionQuit() {
-    var stop = window.open('http://172.23.40.235:8080/0/action/quit');
+    var stop = window.open('http://172.23.40.235:8080/1/action/quit');
     sleep(10);
     stop.close();
 }
 
 function actionRestart() {
-    var restart = window.open('http://172.23.40.235:8080/0/action/restart');
+    var restart = window.open('http://172.23.40.235:8080/1/action/restart');
     sleep(10);
     restart.close();
 }
