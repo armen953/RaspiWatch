@@ -24,7 +24,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Configuration Motion</title>
+        <title>Contrôler les différentes caméras</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -96,14 +96,13 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
                         <ul class="nav navbar-nav side-nav">
                             <li>
-                                <?php echo "<a href="."dashboard.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
-                                    <!-- PROBLEME SUR L'AFFICHAGE DE L'ICONE -->
+                                <?php echo "<a href="."dashboard.php?id=".$userInfo['id']?> "><i class="glyphicon glyphicon-facetime-video"></i> Caméra en Direct </a>
                             </li>
                             <li class="active">
-                                <?php echo "<a href="."controlMotion.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-wrench"></i> Config Caméras</a>
+                                <?php echo "<a href="."controlMotion.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-wrench"></i> Configuration des Caméras </a>
                             </li>
                             <li>
-                                <?php echo "<a href="."images.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-picture-o"></i> Images</a>
+                                <?php echo "<a href="."images.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-picture-o"></i> Visualisation des Images </a>
                             </li>
                         </ul>
                     </div>
@@ -117,7 +116,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                         <div class="row">
                             <div class="col-lg-12">
                                 <h1 class="page-header">
-                            Config Caméras <small>Contrôler les différentes caméras</small>
+                            Configuration des Caméras <small>Contrôler les différentes caméras</small>
                         </h1>
                                 <ol class="breadcrumb">
                                     <li>
@@ -125,7 +124,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                         <?php echo "<a href="."dashboard.php?id=".$userInfo['id']?> "> Dashboard</a>
                                     </li>
                                     <li class="active">
-                                        <i class="fa fa-wrench"></i> Config Caméras
+                                        <i class="fa fa-wrench"></i> Configuration des Caméras
                                     </li>
                                 </ol>
                             </div>
