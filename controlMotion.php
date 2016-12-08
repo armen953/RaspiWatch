@@ -134,12 +134,10 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                             </div>
                         </div>
 
-                        <!-- 1er maniere de faire 
-                <div class="row">
-                    <div class="alert alert-success">
-                        <strong>Bonjour!</strong> afficher ici le retour de la commande.
-                    </div>
-                </div>   -->
+                        <!---------------------------------------------------CAMEREA 1-------------------------------------------------------------------->
+                        <ul class="nav nav-pills">
+                            <li role="presentation" class="active"><a href="#">Caméra <span class="badge">1</span></a></li>
+                        </ul>
 
                         <div class="row">
                             <div class="col-sm-6">
@@ -205,8 +203,222 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                 </div>
                             </div>
                         </div>
+                        <!---------------------------------------------------CAMEREA 2-------------------------------------------------------------------->
+
+                        <ul class="nav nav-pills">
+                            <li role="presentation" class="active"><a href="#">Caméra <span class="badge">2</span></a></li>
+                        </ul>
+
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="panel panel-green">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title text-center"> Action </h3>
+                                    </div>
+                                    <p>
+                                        <div class="row">
+                                            <div class="col-md-6 text-center">
+                                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-success" href="#"> Make Move </a> </div>
+                                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-success" href="#"> Snapshot </a> </div>
+                                            </div>
+
+                                            <div class="col-md-6 text-center">
+                                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-success" id="btnRestart2" href=""> Restart </a> </div>
+                                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-success" id="btnQuit2" href=""> Quit </a> </div>
+                                            </div>
+                                        </div>
+                                    </p>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-sm-6">
+                                <div class="panel panel-red">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title text-center"> Detection </h3>
+                                    </div>
+                                    <p>
+
+                                        <!--BOUTON ON/OFF-->
+
+                                        <div class="row">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-3 col-sm-2 col-xs-3 "></div>
+                                                <div class="col-md-1 col-xs-1">
+                                                    <div class="flipswitch">
+                                                        <input type="checkbox" name="flipswitch" class="flipswitch-cb" id="fs2" disabled="disabled" checked>
+                                                        <label class="flipswitch-label" for="fs2">
+                                                            <div class="flipswitch-inner"></div>
+                                                            <div class="flipswitch-switch"></div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-1 col-xs-1"></div>
+                                                <div class="col-md-1 col-xs-1"></div>
+                                            </div>
+
+                                            <!---------------->
+                                            <div class="row">
+                                                <div class="col-md-6 text-center">
+                                                    <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" id="btnStart2" href="#"> Start </a> </div>
+                                                </div>
+                                                <div class="col-md-6 text-center">
+                                                    <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" id="btnStop2" href="#"> Pause </a> </div>
+                                                </div>
+                                    </p>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!---------------------------------------------------CAMEREA 3-------------------------------------------------------------------->
+
+                        <ul class="nav nav-pills">
+                            <li role="presentation" class="active"><a href="#">Caméra <span class="badge">3</span></a></li>
+                        </ul>
+
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="panel panel-green">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title text-center"> Action </h3>
+                                    </div>
+                                    <p>
+                                        <div class="row">
+                                            <div class="col-md-6 text-center">
+                                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-success" href="#"> Make Move </a> </div>
+                                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-success" href="#"> Snapshot </a> </div>
+                                            </div>
+
+                                            <div class="col-md-6 text-center">
+                                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-success" id="btnRestart3" href=""> Restart </a> </div>
+                                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-success" id="btnQuit3" href=""> Quit </a> </div>
+                                            </div>
+                                        </div>
+                                    </p>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-sm-6">
+                                <div class="panel panel-red">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title text-center"> Detection </h3>
+                                    </div>
+                                    <p>
+
+                                        <!--BOUTON ON/OFF-->
+
+                                        <div class="row">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-3 col-sm-2 col-xs-3 "></div>
+                                                <div class="col-md-1 col-xs-1">
+                                                    <div class="flipswitch">
+                                                        <input type="checkbox" name="flipswitch" class="flipswitch-cb" id="fs3" disabled="disabled" checked>
+                                                        <label class="flipswitch-label" for="fs3">
+                                                            <div class="flipswitch-inner"></div>
+                                                            <div class="flipswitch-switch"></div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-1 col-xs-1"></div>
+                                                <div class="col-md-1 col-xs-1"></div>
+                                            </div>
+
+                                            <!---------------->
+                                            <div class="row">
+                                                <div class="col-md-6 text-center">
+                                                    <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" id="btnStart3" href="#"> Start </a> </div>
+                                                </div>
+                                                <div class="col-md-6 text-center">
+                                                    <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" id="btnStop3" href="#"> Pause </a> </div>
+                                                </div>
+                                    </p>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!---------------------------------------------------CAMEREA 4-------------------------------------------------------------------->
+
+                        <ul class="nav nav-pills">
+                            <li role="presentation" class="active"><a href="#">Caméra <span class="badge">4</span></a></li>
+                        </ul>
+
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="panel panel-green">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title text-center"> Action </h3>
+                                    </div>
+                                    <p>
+                                        <div class="row">
+                                            <div class="col-md-6 text-center">
+                                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-success" href="#"> Make Move </a> </div>
+                                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-success" href="#"> Snapshot </a> </div>
+                                            </div>
+
+                                            <div class="col-md-6 text-center">
+                                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-success" id="btnRestart4" href=""> Restart </a> </div>
+                                                <div class="panel-body"> <a type="button" class="btn btn-lg btn-success" id="btnQuit4" href=""> Quit </a> </div>
+                                            </div>
+                                        </div>
+                                    </p>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-sm-6">
+                                <div class="panel panel-red">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title text-center"> Detection </h3>
+                                    </div>
+                                    <p>
+
+                                        <!--BOUTON ON/OFF-->
+
+                                        <div class="row">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-3 col-sm-2 col-xs-3 "></div>
+                                                <div class="col-md-1 col-xs-1">
+                                                    <div class="flipswitch">
+                                                        <input type="checkbox" name="flipswitch" class="flipswitch-cb" id="fs4" disabled="disabled" checked>
+                                                        <label class="flipswitch-label" for="fs4">
+                                                            <div class="flipswitch-inner"></div>
+                                                            <div class="flipswitch-switch"></div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-1 col-xs-1"></div>
+                                                <div class="col-md-1 col-xs-1"></div>
+                                            </div>
+
+                                            <!---------------->
+                                            <div class="row">
+                                                <div class="col-md-6 text-center">
+                                                    <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" id="btnStart4" href="#"> Start </a> </div>
+                                                </div>
+                                                <div class="col-md-6 text-center">
+                                                    <div class="panel-body"> <a type="button" class="btn btn-lg btn-danger" id="btnStop4" href="#"> Pause </a> </div>
+                                                </div>
+                                    </p>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
 
 
                 <!-- jQuery -->
