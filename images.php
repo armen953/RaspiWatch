@@ -92,20 +92,19 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
                         <ul class="nav navbar-nav side-nav">
                             <li>
-                                <?php echo "<a href="."dashboard.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                                <?php echo "<a href="."dashboard.php?id=".$userInfo['id']?> "><i class="glyphicon glyphicon-facetime-video"></i> Caméra en Direct </a>
                             </li>
                             <li>
-                                <?php echo "<a href="."controlMotion.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-wrench"></i> Config Caméras</a>
+                                <?php echo "<a href="."controlMotion.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-wrench"></i> Configuration des Caméras </a>
                             </li>
                             <li class="active">
-                                <?php echo "<a href="."images.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-picture-o"></i> Images</a>
+                                <?php echo "<a href="."images.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-picture-o"></i> Visualisation des Images </a>
                             </li>
                         </ul>
                     </div>
                 </nav>
 
                 <div id="page-wrapper">
-                    <!--   le bloc blanc   -->
 
                     <div class="container-fluid">
 
@@ -113,15 +112,15 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                         <div class="row">
                             <div class="col-lg-12">
                                 <h1 class="page-header">
-                            Images <small>Images prisent par la camera</small>
+                            Visualisation des Images <small>Visionner les images prisent par les caméras</small>
                         </h1>
                                 <ol class="breadcrumb">
                                     <li>
                                         <i class="fa fa-dashboard"></i>
-                                        <?php echo "<a href="."dashboard.php?id=".$userInfo['id']?> ">Dashboard</a>
+                                        <?php echo "<a href="."dashboard.php?id=".$userInfo['id']?> "> Dashboard</a>
                                     </li>
                                     <li class="active">
-                                        <i class="fa fa-picture-o"></i> Images
+                                        <i class="fa fa-picture-o"></i> Visualisation des Images
                                     </li>
                                 </ol>
                             </div>
@@ -132,12 +131,20 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                         <div class="page-header">
                             <h1>Image</h1>
                         </div>
-                        <img class="img-thumbnail" src="http://placehold.it/400x400" alt="...">
-                        <img class="img-thumbnail" src="http://placehold.it/400x400" alt="...">
-                        <img class="img-thumbnail" src="images/pic05.jpg" alt="...">
-                        <img class="img-rounded" src="images/pic05.jpg" alt="...">
-                        <img class="img-circle" src="images/pic05.jpg" alt="...">
-                        <img class="img-responsive" src="images/pic05.jpg" alt="...">
+                        <div class="row">
+                            <!-- mettre boucle ici fetch pour afficher toutes les images de la BDD-->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                    <img src="images/pic05.jpg" alt="...">
+                                    <div class="caption text-center">
+                                        <h4>DATE ET HEURE IMAGE ICI</h4>
+                                        <p><a href="#" class="btn btn-primary" role="button">Enregistrer</a>
+                                            <a href="#" class="btn btn-danger" role="button">Supprimer</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
