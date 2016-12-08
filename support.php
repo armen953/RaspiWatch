@@ -125,7 +125,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                 <div class="form-group">
                                     <label for="name" class="col-sm-2 control-label">Nom</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Nom Prénom" value="">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Nom & Last Name" value="">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -143,11 +143,6 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                 <div class="form-group">
                                     <div class="col-sm-10 col-sm-offset-2">
                                         <input id="submit" name="submit" type="submit" value="Envoyé" class="btn btn-primary">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-10 col-sm-offset-2">
-                                        <! Will be used to display an alert to the user>
                                     </div>
                                 </div>
                             </form>
