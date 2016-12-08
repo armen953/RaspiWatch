@@ -98,7 +98,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                 <?php echo "<a href="."dashboard.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                             </li>
                             <li>
-                                <?php echo "<a href="."controlMotion.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-wrench"></i> Config Motion</a>
+                                <?php echo "<a href="."controlMotion.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-wrench"></i> Config Caméras</a>
                             </li>
                             <li class="active">
                                 <?php echo "<a href="."images.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-picture-o"></i> Images</a>
