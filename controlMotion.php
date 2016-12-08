@@ -103,7 +103,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                     <!-- PROBLEME SUR L'AFFICHAGE DE L'ICONE -->
                             </li>
                             <li class="active">
-                                <?php echo "<a href="."controlMotion.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-wrench"></i> Config Motion</a>
+                                <?php echo "<a href="."controlMotion.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-wrench"></i> Config Caméras</a>
                             </li>
                             <li>
                                 <?php echo "<a href="."images.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-picture-o"></i> Images</a>
@@ -120,7 +120,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                         <div class="row">
                             <div class="col-lg-12">
                                 <h1 class="page-header">
-                            Config Motion <small>Configuration de motion</small>
+                            Config Caméras <small>Contrôler les différentes caméras</small>
                         </h1>
                                 <ol class="breadcrumb">
                                     <li>
@@ -128,7 +128,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                         <?php echo "<a href="."dashboard.php?id=".$userInfo['id']?> "> Dashboard</a>
                                     </li>
                                     <li class="active">
-                                        <i class="fa fa-wrench"></i> Config Motion
+                                        <i class="fa fa-wrench"></i> Config Caméras
                                     </li>
                                 </ol>
                             </div>
