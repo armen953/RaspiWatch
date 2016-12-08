@@ -82,10 +82,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                     <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                                    <a href="#"><i class="fa fa-fw fa-gear"></i> Options</a>
                                 </li>
                                 <li class="divider"></li>
                                 <li>
