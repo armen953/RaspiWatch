@@ -75,10 +75,10 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $userInfo['pseudo'] ?> <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="#"><i class="glyphicon glyphicon-user"></i> Profile</a>
+                                    <?php echo "<a href="."profile.php?id=".$userInfo['id']?> "><i class="glyphicon glyphicon-user"></i> Profile</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="glyphicon glyphicon-question-sign"></i> Support</a>
+                                    <?php echo "<a href="."support.php?id=".$userInfo['id']?> "><i class="glyphicon glyphicon-question-sign"></i> Support</a>
                                 </li>
                                 <li class="divider"></li>
                                 <li>
