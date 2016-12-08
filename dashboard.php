@@ -91,13 +91,13 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
                         <ul class="nav navbar-nav side-nav">
                             <li class="active">
-                                <?php echo "<a href="."dashboard.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                                <?php echo "<a href="."dashboard.php?id=".$userInfo['id']?> "><i class="glyphicon glyphicon-facetime-video"></i> Caméra en Direct </a>
                             </li>
                             <li>
-                                <?php echo "<a href="."controlMotion.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-wrench"></i> Config Caméras</a>
+                                <?php echo "<a href="."controlMotion.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-wrench"></i> Configuration des Caméras </a>
                             </li>
                             <li>
-                                <?php echo "<a href="."images.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-picture-o"></i> Images</a>
+                                <?php echo "<a href="."images.php?id=".$userInfo['id']?> "><i class="fa fa-fw fa-picture-o"></i> Visualisation des Images </a>
                             </li>
                         </ul>
                     </div>
@@ -111,11 +111,15 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                         <div class="row">
                             <div class="col-lg-12">
                                 <h1 class="page-header">
-                            Dashboard <small>Aperçu des caméras</small>
+                            Caméra en Direct <small>Visionner le flux des caméras en direct</small>
                         </h1>
                                 <ol class="breadcrumb">
+                                    <li>
+                                        <i class="fa fa-dashboard"></i>
+                                        <?php echo "<a href="."dashboard.php?id=".$userInfo['id']?> "> Dashboard</a>
+                                    </li>
                                     <li class="active">
-                                        <i class="fa fa-dashboard"></i> Dashboard
+                                        <i class="fa fa-wrench"></i> Caméra en Direct
                                     </li>
                                 </ol>
                             </div>
@@ -126,7 +130,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                 <div class="panel-heading">
                                     <div class="row">
                                         <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="http://172.23.40.235:8081" scrolling="no" allowfullscreen></iframe>
+                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/reBBW2zZVc8" frameborder="0" allowfullscreen></iframe>
                                         </div>
                                     </div>
                                 </div>
@@ -135,7 +139,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                 <div class="panel-heading">
                                     <div class="row">
                                         <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="http://172.23.40.235:8082" scrolling="no" allowfullscreen></iframe>
+                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/reBBW2zZVc8" frameborder="0" allowfullscreen></iframe>
                                         </div>
                                     </div>
                                 </div>
@@ -144,7 +148,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                 <div class="panel-heading">
                                     <div class="row">
                                         <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="http://172.23.40.235:8081" scrolling="no" allowfullscreen></iframe>
+                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/reBBW2zZVc8" frameborder="0" allowfullscreen></iframe>
                                         </div>
                                     </div>
                                 </div>
@@ -153,7 +157,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                 <div class="panel-heading">
                                     <div class="row">
                                         <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="http://172.23.40.235:8081" scrolling="no" allowfullscreen></iframe>
+                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/reBBW2zZVc8" frameborder="0" allowfullscreen></iframe>
                                         </div>
                                     </div>
                                 </div>
