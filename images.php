@@ -24,7 +24,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Dashboard</title>
+        <title>Visualisation des Images</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -116,8 +116,8 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                         </h1>
                                 <ol class="breadcrumb">
                                     <li>
-                                        <i class="fa fa-dashboard"></i>
-                                        <?php echo "<a href="."dashboard.php?id=".$userInfo['id']?> "> Dashboard</a>
+                                        <i class="glyphicon glyphicon-facetime-video"></i>
+                                        <?php echo "<a href="."dashboard.php?id=".$userInfo['id']?> "> Caméra en Direct</a>
                                     </li>
                                     <li class="active">
                                         <i class="fa fa-picture-o"></i> Visualisation des Images
