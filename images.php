@@ -128,9 +128,6 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
 
                         <!--   CONTENU DE LA PAGE   -->
 
-                        <div class="page-header">
-                            <h1>Image</h1>
-                        </div>
                         <div class="row">
                             <!-- mettre boucle ici fetch pour afficher toutes les images de la BDD-->
                             <div class="col-sm-6 col-md-4">
