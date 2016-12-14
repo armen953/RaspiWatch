@@ -130,6 +130,16 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
 
                         <div class="row">
                             <!-- mettre boucle ici fetch pour afficher toutes les images de la BDD-->
+                            <?php
+                                    $images = $bdd->getConnexion()->prepare('SELECT * FROM security');
+                                    $images->execute();
+                                    $image = $images->fetch();
+                              	    foreach($image as $img){
+                                        echo '<img src="'.$img.'">';
+					}
+
+                                 
+                            ?>
                             <div class="col-sm-6 col-md-4">
                                 <div class="thumbnail">
                                     <img src="images/pic05.jpg" alt="...">
