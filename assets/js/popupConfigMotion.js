@@ -78,109 +78,112 @@ window.onload = function () {
 
 /**** FUNCTION DES BOUTONS CAM 1****/
 
-function detectionStart() {
-    var start = window.open('http://172.23.40.235:8080/1/detection/start');
-    sleep(10);
-    start.close();
+function detectionStart() {	
+	var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", 'http://172.168.1.31:8080/1/detection/start', false ); 
+    xmlHttp.send( null );
+    }
+
+function detectionStop() {	
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", 'http://172.168.1.31:8080/1/detection/pause', false ); 
+    xmlHttp.send( null );
+    
 }
 
-function detectionStop() {
-    var stop = window.open('http://172.23.40.235:8080/1/detection/pause');
-    sleep(10);
-    stop.close();
+function actionQuit() {   
+	var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", 'http://172.23.40.235:8080/1/action/quit', false ); 
+    xmlHttp.send( null );
 }
 
-function actionQuit() {
-    var stop = window.open('http://172.23.40.235:8080/1/action/quit');
-    sleep(10);
-    stop.close();
-}
-
-function actionRestart() {
-    var restart = window.open('http://172.23.40.235:8080/1/action/restart');
-    sleep(10);
-    restart.close();
+function actionRestart() {	
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", 'http://172.23.40.235:8080/1/action/restart', false ); 
+    xmlHttp.send( null );
+	
+	
 }
 /****************************/
 
 /**** FUNCTION DES BOUTONS CAM 2****/
 
 function detectionStart2() {
-    var start = window.open('http://172.23.40.235:8080/2/detection/start');
-    sleep(10);
-    start.close();
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", 'http://172.168.1.31:8080/2/detection/start', false ); 
+    xmlHttp.send( null );
 }
 
 function detectionStop2() {
-    var stop = window.open('http://172.23.40.235:8080/2/detection/pause');
-    sleep(10);
-    stop.close();
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", 'http://172.168.1.31:8080/2/detection/pause', false ); 
+    xmlHttp.send( null );
 }
 
 function actionQuit2() {
-    var stop = window.open('http://172.23.40.235:8080/2/action/quit');
-    sleep(10);
-    stop.close();
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", 'http://172.23.40.235:8080/2/action/quit', false );
+    xmlHttp.send( null );
 }
 
 function actionRestart2() {
-    var restart = window.open('http://172.23.40.235:8080/2/action/restart');
-    sleep(10);
-    restart.close();
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", 'http://172.23.40.235:8080/2/action/restart', false ); 
+    xmlHttp.send( null );
 }
 /****************************/
 
 /**** FUNCTION DES BOUTONS CAM 3****/
 
 function detectionStart3() {
-    var start = window.open('http://172.23.40.235:8080/3/detection/start');
-    sleep(10);
-    start.close();
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", 'http://172.168.1.31:8080/3/detection/start', false ); 
+    xmlHttp.send( null );
 }
 
 function detectionStop3() {
-    var stop = window.open('http://172.23.40.235:8080/3/detection/pause');
-    sleep(10);
-    stop.close();
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", 'http://172.168.1.31:8080/3/detection/pause', false ); 
+    xmlHttp.send( null );
 }
 
 function actionQuit3() {
-    var stop = window.open('http://172.23.40.235:8080/3/action/quit');
-    sleep(10);
-    stop.close();
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", 'http://172.23.40.235:8080/3/action/quit', false ); 
+    xmlHttp.send( null );
 }
 
 function actionRestart3() {
-    var restart = window.open('http://172.23.40.235:8080/3/action/restart');
-    sleep(10);
-    restart.close();
+  var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", 'http://172.23.40.235:8080/3/action/restart', false ); 
+    xmlHttp.send( null );
 }
 /****************************/
 
 /**** FUNCTION DES BOUTONS CAM 4****/
 
 function detectionStart4() {
-    var start = window.open('http://172.23.40.235:8080/4/detection/start');
-    sleep(10);
-    start.close();
+   var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", 'http://172.168.1.31:8080/3/detection/start', false ); 
+    xmlHttp.send( null );
 }
 
 function detectionStop4() {
-    var stop = window.open('http://172.23.40.235:8080/4/detection/pause');
-    sleep(10);
-    stop.close();
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", 'http://172.168.1.31:8080/4/detection/pause', false ); 
+    xmlHttp.send( null );
 }
 
 function actionQuit4() {
-    var stop = window.open('http://172.23.40.235:8080/4/action/quit');
-    sleep(10);
-    stop.close();
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", 'http://172.23.40.235:8080/4/action/quit', false ); 
+    xmlHttp.send( null );
 }
 
 function actionRestart4() {
-    var restart = window.open('http://172.23.40.235:8080/4/action/restart');
-    sleep(10);
-    restart.close();
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", 'http://172.23.40.235:8080/4/action/restart', false ); 
+    xmlHttp.send( null );
 }
 /****************************/
 
