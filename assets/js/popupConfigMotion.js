@@ -80,13 +80,13 @@ window.onload = function () {
 
 function detectionStart() {	
 	var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://172.168.1.31:8080/1/detection/start', false ); 
+    xmlHttp.open( "GET", 'http://172.23.40.235:8080/1/detection/start', false ); 
     xmlHttp.send( null );
     }
 
 function detectionStop() {	
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://172.168.1.31:8080/1/detection/pause', false ); 
+    xmlHttp.open( "GET", 'http://172.23.40.235:8080/1/detection/pause', false ); 
     xmlHttp.send( null );
     
 }
@@ -110,13 +110,13 @@ function actionRestart() {
 
 function detectionStart2() {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://172.168.1.31:8080/2/detection/start', false ); 
+    xmlHttp.open( "GET", 'http://172.23.40.235:8080/2/detection/start', false ); 
     xmlHttp.send( null );
 }
 
 function detectionStop2() {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://172.168.1.31:8080/2/detection/pause', false ); 
+    xmlHttp.open( "GET", 'http://172.23.40.235:8080/2/detection/pause', false ); 
     xmlHttp.send( null );
 }
 
@@ -137,13 +137,13 @@ function actionRestart2() {
 
 function detectionStart3() {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://172.168.1.31:8080/3/detection/start', false ); 
+    xmlHttp.open( "GET", 'http://172.23.40.235:8080/3/detection/start', false ); 
     xmlHttp.send( null );
 }
 
 function detectionStop3() {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://172.168.1.31:8080/3/detection/pause', false ); 
+    xmlHttp.open( "GET", 'http://172.23.40.235:8080/3/detection/pause', false ); 
     xmlHttp.send( null );
 }
 
@@ -164,13 +164,13 @@ function actionRestart3() {
 
 function detectionStart4() {
    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://172.168.1.31:8080/3/detection/start', false ); 
+    xmlHttp.open( "GET", 'http://172.23.40.235:8080/3/detection/start', false ); 
     xmlHttp.send( null );
 }
 
 function detectionStop4() {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://172.168.1.31:8080/4/detection/pause', false ); 
+    xmlHttp.open( "GET", 'http://172.23.40.235:8080/4/detection/pause', false ); 
     xmlHttp.send( null );
 }
 
