@@ -2,8 +2,10 @@
 session_start();
 require 'php/connexion.php';
 $bdd = new connexion();
+$ip = $_SERVER['SERVER_ADDR'];
 
-if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe si elle exite alros cela affiche la page
+
+if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe si elle exite alors cela affiche la page
 {  // ouverture de if numero 1
     $getId = intval($_GET['id']);   // transformer le id en int
     $reqUser = $bdd->getConnexion()->prepare('SELECT * FROM membre WHERE id = ?');
@@ -76,9 +78,24 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                 <li>
                                     <?php echo "<a href="."profile.php?id=".$userInfo['id']?> "><i class="glyphicon glyphicon-user"></i> Profile</a>
                                 </li>
+								<?php 
+									if ($userInfo['id'] == 6){ 
+									echo '<li>';
+										echo '<a href="inscription.php"><i class="glyphicon glyphicon-plus"></i> Inscrire</a>';
+									echo '</li>';
+									}
+									/*
+									else{
+									echo '<li>';
+										echo '<a href=support.php?id=".$userInfo['id']"><i class="glyphicon glyphicon-question-sign"></i> Support</a>';
+									echo '</li>';
+									}*/
+								?>	
                                 <li>
                                     <?php echo "<a href="."support.php?id=".$userInfo['id']?> "><i class="glyphicon glyphicon-question-sign"></i> Support</a>
                                 </li>
+								
+								
                                 <li class="divider"></li>
                                 <li>
                                     <a href="php/deconnexion.php"><i class="glyphicon glyphicon-off"></i> Déconnexion</a>
@@ -127,7 +144,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                 <div class="panel-heading">
                                     <div class="row">
                                         <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="http://172.23.40.235:8081" scrolling="no" frameborder="0" allowfullscreen></iframe>
+                                            <iframe class="embed-responsive-item" src="http://<?=$ip?>:8081" scrolling="no" frameborder="0" allowfullscreen></iframe>
                                         </div>
                                     </div>
                                 </div>
@@ -136,7 +153,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                 <div class="panel-heading">
                                     <div class="row">
                                         <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="http://172.23.40.235:8082" scrolling="no" frameborder="0" allowfullscreen></iframe>
+                                            <iframe class="embed-responsive-item" src="http://<?=$ip?>:8082" scrolling="no" frameborder="0" allowfullscreen></iframe>
                                         </div>
                                     </div>
                                 </div>
@@ -145,7 +162,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                 <div class="panel-heading">
                                     <div class="row">
                                         <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="http://172.23.40.235:8081" scrolling="no" frameborder="0" allowfullscreen></iframe>
+                                            <iframe class="embed-responsive-item" src="http://<?=$ip?>:8083" scrolling="no" frameborder="0" allowfullscreen></iframe>
                                         </div>
                                     </div>
                                 </div>
@@ -154,7 +171,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                 <div class="panel-heading">
                                     <div class="row">
                                         <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="http://172.23.40.235:8081" scrolling="no" frameborder="0" allowfullscreen></iframe>
+                                            <iframe class="embed-responsive-item" src="http://<?=$ip?>:8081" scrolling="no" frameborder="0" allowfullscreen></iframe>
                                         </div>
                                     </div>
                                 </div>

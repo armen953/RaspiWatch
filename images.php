@@ -77,9 +77,24 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                 <li>
                                     <?php echo "<a href="."profile.php?id=".$userInfo['id']?> "><i class="glyphicon glyphicon-user"></i> Profile</a>
                                 </li>
+								<?php 
+									if ($userInfo['id'] == 6){ 
+									echo '<li>';
+										echo '<a href="inscription.php"><i class="glyphicon glyphicon-plus"></i> Inscrire</a>';
+									echo '</li>';
+									
+									
+									}
+									/*
+									else{
+									echo '<li>';
+										echo '<a href=support.php?id=".$userInfo['id']"><i class="glyphicon glyphicon-question-sign"></i> Support</a>';
+									echo '</li>';
+									}*/
+								?>	
                                 <li>
                                     <?php echo "<a href="."support.php?id=".$userInfo['id']?> "><i class="glyphicon glyphicon-question-sign"></i> Support</a>
-                                </li>
+                                </li>							    
                                 <li class="divider"></li>
                                 <li>
                                     <a href="php/deconnexion.php"><i class="glyphicon glyphicon-off"></i> Déconnexion</a>
@@ -131,28 +146,32 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                         <div class="row">
                             <!-- mettre boucle ici fetch pour afficher toutes les images de la BDD-->
                             <?php
-                                    $images = $bdd->getConnexion()->prepare('SELECT * FROM security');
-                                    $images->execute();
-                                    $image = $images->fetch();
-                              	    foreach($image as $img){
-                                        echo '<img src="'.$img.'">';
-					}
+                                $images = $bdd->getConnexion()->prepare('SELECT * FROM security');
+                                $images->execute();
+                                $image = $images->fetchAll();  
+                                    
+                                foreach($image as $img)
+                                { 
+                                    $lienImage = substr($img['filename'],8); //19
 
-                                 
-                            ?>
-                            <div class="col-sm-6 col-md-4">
-                                <div class="thumbnail">
-                                    <img src="images/pic05.jpg" alt="...">
-                                    <div class="caption text-center">
-                                        <h4>DATE ET HEURE IMAGE ICI</h4>
-                                        <p><a href="#" class="btn btn-primary" role="button">Enregistrer</a>
-                                            <a href="#" class="btn btn-danger" role="button">Supprimer</a>
-                                        </p>
+                                echo'<div class="col-sm-6 col-md-4">
+                                    <div class="thumbnail">
+                                        <img src="..'.$lienImage.'" alt="..." > 
+                                            <div class="caption text-center">
+                                                <h4>DATE ET HEURE IMAGE ICI</h4>
+                                                <p><a href="#" class="btn btn-primary" role="button">Enregistrer</a>
+                                                    <a href="#" class="btn btn-danger" role="button">Supprimer</a>
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
+                                ';
+                        
 
+                               }  
+                        ?>
+                     
+                        </div>
                     </div>
                 </div>
 
