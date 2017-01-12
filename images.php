@@ -152,7 +152,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                     
                                 foreach($image as $img)
                                 { 
-                                    $lienImage = substr($img['filename'],8); //19
+                                    $lienImage = substr($img['filename'],19); //19-> pour /var/www/RaspiWatch/imgCamera1 // 8-> pour /var/www/imgCamera1
 
                                 echo'<div class="col-sm-6 col-md-4">
                                     <div class="thumbnail">
