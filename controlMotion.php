@@ -3,7 +3,7 @@ session_start();
 require 'php/connexion.php';
 $bdd = new connexion();
 
-if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe si elle exite alros cela affiche la page
+if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe si elle exite alors cela affiche la page
 {  // ouverture de if numero 1
     $getId = intval($_GET['id']);   // transformer le id en int
     $reqUser = $bdd->getConnexion()->prepare('SELECT * FROM membre WHERE id = ?');
@@ -73,30 +73,21 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                         <a class="navbar-brand" href="#">RaspiWatch</a>
                     </div>
 
-                    <ul class="nav navbar-right top-nav">
+                                       <ul class="nav navbar-right top-nav">
                         <!-- le menu profil  -->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $userInfo['pseudo'] ?> <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li>
-                                    <?php echo "<a href="."profile.php?id=".$userInfo['id']?> "><i class="glyphicon glyphicon-user"></i> Profile</a>
-                                </li>
 								<?php 
 									if ($userInfo['id'] == 6){ 
+									echo '<li>';
+										echo '<a href="profile.php"><i class="glyphicon glyphicon-user"></i> Profile</a>';
+									echo '</li>';	
 									echo '<li>';
 										echo '<a href="inscription.php"><i class="glyphicon glyphicon-plus"></i> Inscrire</a>';
 									echo '</li>';
 									}
-									/*
-									else{
-									echo '<li>';
-										echo '<a href=support.php?id=".$userInfo['id']"><i class="glyphicon glyphicon-question-sign"></i> Support</a>';
-									echo '</li>';
-									}*/
-								?>	
-                                <li>
-                                    <?php echo "<a href="."support.php?id=".$userInfo['id']?> "><i class="glyphicon glyphicon-question-sign"></i> Support</a>
-                                </li>
+								?>
                                 <li class="divider"></li>
                                 <li>
                                     <a href="php/deconnexion.php"><i class="glyphicon glyphicon-off"></i> Déconnexion</a>
