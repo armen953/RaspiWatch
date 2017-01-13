@@ -127,6 +127,14 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                         <!-- Page Heading -->
                         <div class="row">
                             <div class="col-lg-12">
+								<?php
+									if (isset($_SESSION['inscriptionOk']) AND isset($_SESSION['pseudoCree']))  // test pour voir si un utilisateur a été crée
+									{
+											echo'<div class="alert alert-success" role="alert">L\'utilisateur '.$_SESSION['pseudoCree'].' à bien été crée</div>';
+											unset($_SESSION['inscriptionOk']);  //supprimer le variable de session
+											unset($_SESSION['pseudoCree']);	//supprimer le variable de session
+									}
+								?>
                                 <h1 class="page-header">
 									Caméra en Direct <small>Visionner le flux des caméras en direct</small>
 								</h1>
