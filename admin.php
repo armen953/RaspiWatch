@@ -2,10 +2,8 @@
 session_start();
 require 'php/connexion.php';
 $bdd = new connexion();
-$ip = $_SERVER['SERVER_ADDR'];
 
-
-if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe si elle exite alors cela affiche la page
+if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe si elle exite alros cela affiche la page
 {  // ouverture de if numero 1
     $getId = intval($_GET['id']);   // transformer le id en int
     $reqUser = $bdd->getConnexion()->prepare('SELECT * FROM membre WHERE id = ?');
@@ -26,7 +24,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Caméra en Direct</title>
+        <title>Contrôler les différentes caméras</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -42,6 +40,10 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+        <!-- File JavaScript contenant function pour controler motion -->
+        <script language="javascript" type="text/javascript" src="assets/js/popupConfigMotion.js"></script>
+        <!-- CSS button -->
+        <link href="assets/css/buttonOnOffMotion.css" rel="stylesheet" type="text/css">
 
     </head>
 
@@ -67,6 +69,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
+
                         <a class="navbar-brand" href="#">RaspiWatch</a>
                     </div>
 
@@ -96,7 +99,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                     <!-- Menu a gauche  -->
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
                         <ul class="nav navbar-nav side-nav">
-                            <li class="active">
+                            <li>
                                 <?php echo "<a href="."dashboard.php?id=".$userInfo['id']?> "><i class="glyphicon glyphicon-facetime-video"></i> Caméra en Direct </a>
                             </li>
                             <li>
@@ -111,71 +114,20 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
 
                 <div id="page-wrapper">
 
-                    <div class="container-fluid">
+                <div class="container-fluid">
 
                         <!-- Page Heading -->
                         <div class="row">
                             <div class="col-lg-12">
-								<?php
-									if (isset($_SESSION['inscriptionOk']) AND isset($_SESSION['pseudoCree']) AND $userInfo['id'] == 6)  // test pour voir si un utilisateur a été crée
-									{
-											echo'<div class="alert alert-success" role="alert">L\'utilisateur '.$_SESSION['pseudoCree'].' à bien été crée</div>';
-											unset($_SESSION['inscriptionOk']);  //supprimer le variable de session
-											unset($_SESSION['pseudoCree']);	//supprimer le variable de session
-									}
-								?>
                                 <h1 class="page-header">
-									Caméra en Direct <small>Visionner le flux des caméras en direct</small>
-								</h1>
-                                <ol class="breadcrumb">
-                                    <li>
-                                        <i class="glyphicon glyphicon-facetime-video"></i>
-                                          Caméra en Direct
-                                    </li>
-                                </ol>
+                            Admin <small>Dashboard Administrateur</small>
+                        </h1>
                             </div>
                         </div>
-
-                        <div class="row">
-                            <div class="panel panel-primary col-lg-6">
-                                <div class="panel-heading">
-                                    <div class="row">
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="http://<?=$ip?>:8081" scrolling="no" frameborder="0" allowfullscreen></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-primary col-lg-6">
-                                <div class="panel-heading">
-                                    <div class="row">
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="http://<?=$ip?>:8082" scrolling="no" frameborder="0" allowfullscreen></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-primary col-lg-6">
-                                <div class="panel-heading">
-                                    <div class="row">
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="http://<?=$ip?>:8083" scrolling="no" frameborder="0" allowfullscreen></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-primary col-lg-6">
-                                <div class="panel-heading">
-                                    <div class="row">
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="http://<?=$ip?>:8081" scrolling="no" frameborder="0" allowfullscreen></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
+
 
 
                 <!-- jQuery -->

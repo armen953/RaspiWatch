@@ -69,7 +69,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                         <a class="navbar-brand" href="#">RaspiWatch</a>
                     </div>
 
-                                        <ul class="nav navbar-right top-nav">
+                    <ul class="nav navbar-right top-nav">
                         <!-- le menu profil  -->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $userInfo['pseudo'] ?> <b class="caret"></b></a>
@@ -77,7 +77,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
 								<?php 
 									if ($userInfo['id'] == 6){ 
 									echo '<li>';
-										echo '<a href="admin.php"><i class="glyphicon glyphicon-user"></i> Admin</a>';
+										echo '<a href="admin.php?id=6"><i class="glyphicon glyphicon-user"></i> Admin</a>';
 									echo '</li>';	
 									echo '<li>';
 										echo '<a href="inscription.php"><i class="glyphicon glyphicon-plus"></i> Inscrire</a>';
