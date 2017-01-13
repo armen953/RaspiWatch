@@ -1,13 +1,5 @@
-/* function pour permettre le chargement complet la page pour réaliser l'action */
-function sleep(milliseconds) {
-    var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) {
-        if ((new Date().getTime() - start) > milliseconds) {
-            break;
-        }
-    }
-}
-
+var ip = null;
+getServerIP();
 /**** Load function des boutons ****/
 
 window.onload = function () {
@@ -73,34 +65,47 @@ window.onload = function () {
     /*********************************/
 }
 
+/**** Fonction récupérant l'adresse du serveur(pi) ****/
+function getServerIP()
+		{
 
+		    var xhr = new XMLHttpRequest();
 
+		    xhr.onload = function()
+		        {
+		        ip =(xhr.responseText);
+		        }
+
+		    xhr.open('GET', 'php/AdresseServeur.php');
+
+		    xhr.send();
+		}
 
 /**** FUNCTION DES BOUTONS CAM 1****/
 
 function detectionStart() {	
 	var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://172.23.40.235:8080/1/detection/start', false ); 
-    xmlHttp.send( null );
+    xmlHttp.open( "GET", "http://"+ip+":8080/1/detection/start"); 
+    xmlHttp.send();
     }
 
 function detectionStop() {	
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://172.23.40.235:8080/1/detection/pause', false ); 
-    xmlHttp.send( null );
+    xmlHttp.open(  "GET","http://"+ip+":8080/1/detection/pause"); 
+    xmlHttp.send();
     
 }
 
 function actionQuit() {   
 	var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://172.23.40.235:8080/1/action/quit', false ); 
-    xmlHttp.send( null );
+    xmlHttp.open( "GET", "http://"+ip+":8080/1/detection/quit"); 
+    xmlHttp.send();
 }
 
 function actionRestart() {	
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://172.23.40.235:8080/1/action/restart', false ); 
-    xmlHttp.send( null );
+    xmlHttp.open( "GET","http://"+ip+":8080/1/detection/restart"); 
+    xmlHttp.send();
 	
 	
 }
@@ -110,26 +115,26 @@ function actionRestart() {
 
 function detectionStart2() {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://172.23.40.235:8080/2/detection/start', false ); 
-    xmlHttp.send( null );
+    xmlHttp.open( "GET", "http://"+ip+":8080/2/detection/start"); 
+    xmlHttp.send();
 }
 
 function detectionStop2() {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://172.23.40.235:8080/2/detection/pause', false ); 
-    xmlHttp.send( null );
+    xmlHttp.open( "GET", "http://"+ip+":8080/2/detection/pause"); 
+    xmlHttp.send();
 }
 
 function actionQuit2() {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://172.23.40.235:8080/2/action/quit', false );
-    xmlHttp.send( null );
+    xmlHttp.open( "GET", "http://"+ip+":8080/2/detection/quit");
+    xmlHttp.send();
 }
 
 function actionRestart2() {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://172.23.40.235:8080/2/action/restart', false ); 
-    xmlHttp.send( null );
+    xmlHttp.open( "GET", "http://"+ip+":8080/2/detection/restart"); 
+    xmlHttp.send();
 }
 /****************************/
 
@@ -137,26 +142,26 @@ function actionRestart2() {
 
 function detectionStart3() {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://172.23.40.235:8080/3/detection/start', false ); 
-    xmlHttp.send( null );
+    xmlHttp.open( "GET", "http://"+ip+":8080/3/detection/start"); 
+    xmlHttp.send();
 }
 
 function detectionStop3() {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://172.23.40.235:8080/3/detection/pause', false ); 
-    xmlHttp.send( null );
+    xmlHttp.open( "GET", "http://"+ip+":8080/3/detection/pause"); 
+    xmlHttp.send();
 }
 
 function actionQuit3() {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://172.23.40.235:8080/3/action/quit', false ); 
-    xmlHttp.send( null );
+    xmlHttp.open( "GET", "http://"+ip+":8080/3/detection/quit");  
+    xmlHttp.send();
 }
 
 function actionRestart3() {
   var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://172.23.40.235:8080/3/action/restart', false ); 
-    xmlHttp.send( null );
+    xmlHttp.open( "GET", "http://"+ip+":8080/3/detection/restart");  
+    xmlHttp.send();
 }
 /****************************/
 
@@ -164,26 +169,26 @@ function actionRestart3() {
 
 function detectionStart4() {
    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://172.23.40.235:8080/3/detection/start', false ); 
-    xmlHttp.send( null );
+    xmlHttp.open( "GET", "http://"+ip+":8080/4/detection/start"); 
+    xmlHttp.send();
 }
 
 function detectionStop4() {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://172.23.40.235:8080/4/detection/pause', false ); 
-    xmlHttp.send( null );
+    xmlHttp.open( "GET", "http://"+ip+":8080/4/detection/pause"); 
+    xmlHttp.send();
 }
 
 function actionQuit4() {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://172.23.40.235:8080/4/action/quit', false ); 
-    xmlHttp.send( null );
+    xmlHttp.open( "GET", "http://"+ip+":8080/4/detection/quit"); 
+    xmlHttp.send();
 }
 
 function actionRestart4() {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", 'http://172.23.40.235:8080/4/action/restart', false ); 
-    xmlHttp.send( null );
+    xmlHttp.open( "GET", "http://"+ip+":8080/4/detection/restart"); 
+    xmlHttp.send();
 }
 /****************************/
 
