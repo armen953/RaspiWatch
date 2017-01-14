@@ -16,7 +16,7 @@ if(isset($_POST['ok']))
         $pseudolength = strlen($pseudo);  // la taille du pseudo
         if($pseudolength <=255)
         {            
-            $verifpseudo = $bdd->getConnexion()->prepare("SELECT * FROM membre WHERE pseudo = ?");     // on si le pseudo existe deja dans la bd
+            $verifpseudo = $bdd->getConnexion()->prepare("SELECT * FROM membre WHERE pseudo = ?");     // on si le pseudo existe déjà dans la bd
             $verifpseudo->execute(array($pseudo));
             $pseudoexiste = $verifpseudo->rowCount();  // compte le nb de colone retourné par la requete 
             
@@ -39,15 +39,15 @@ if(isset($_POST['ok']))
             }
             else  // si le pseudo existe alros
             {
-                $erreur = "Le pseudo existe deja";
+                $erreur = "Le pseudo existe déjà";
             }
         }else 
         {
-            $erreur = "Votre pseudo ne doit pas depasser 255 caractères ! ";
+            $erreur = "Votre pseudo ne doit pas dépasser 255 caractères ! ";
         }
     }else
     {
-        $erreur = "Tous les champs doivent etre compéltés ! ";
+        $erreur = "Tous les champs doivent etre complétés ! ";
     }
 }              
 ?>
