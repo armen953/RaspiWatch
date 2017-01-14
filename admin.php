@@ -9,6 +9,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
     $reqUser = $bdd->getConnexion()->prepare('SELECT * FROM membre WHERE id = ?');
     $reqUser->execute(array($_GET['id']));
     $userInfo = $reqUser->fetch();
+
 ?>
 
 
@@ -113,19 +114,62 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                 </nav>
 
                 <div id="page-wrapper">
-
-                <div class="container-fluid">
-
-                        <!-- Page Heading -->
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <h1 class="page-header">
-                            Admin <small>Dashboard Administrateur</small>
-                        </h1>
-                            </div>
-                        </div>
-                        
-                    </div>
+					<div class="container-fluid">
+							<!-- Page Heading -->
+							<div class="row">
+								<div class="col-lg-12">
+								
+								<?php
+									if (isset($_SESSION['suppOK']) AND isset($_SESSION['pseudoDelete']) AND $userInfo['id'] == 6)  // test pour voir si l'utilisateur a été supprimé
+									{
+											echo'<div class="alert alert-success" role="alert">L\'utilisateur '.$_SESSION['pseudoDelete'].' été supprimé</div>';
+											unset($_SESSION['suppOK']);  //supprimer le variable de session
+											unset($_SESSION['pseudoDelete']);	//supprimer le variable de session
+									}
+								?>
+								
+									<h1 class="page-header">
+										Admin <small>Dashboard Administrateur</small>
+									</h1>
+								</div>	
+							</div>
+							
+							<div class="table-responsive">          
+								<table class="table">
+									<thead>
+										<tr>
+											<th>id utilisateur</th>
+											<th>Pseudo</th>
+											<th>Date d'inscription</th>
+											<th>Supprimer lutilisateur<th>
+										</tr>
+									</thead>
+									<tbody>
+									
+							<?php 
+								$reqAdmin = $bdd->getConnexion()->prepare('SELECT * FROM membre WHERE admin="0"');
+								$reqAdmin->execute();
+								$user = $reqAdmin->fetchAll(); 
+								foreach($user as $utilisateur)
+								 {
+									 $e="";
+									 // une ligne du tableau
+									 echo 
+									 ' 
+											<tr>
+												<td>'.$utilisateur['id'].'</td>
+												<td>'.$utilisateur['pseudo'].'</td>
+												<td>'.$utilisateur['date_inscription'].'</td>
+												<td><button class="btn btn-danger btn-xs" value="'.$utilisateur['id'].'" id="delete" onClick="window.location=\'php/supprimerUtilisateur.php?id='.$utilisateur['id'].'&amp;del='.$utilisateur['pseudo'].'\';" data-title="Delete"data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
+											</tr>
+									';
+								 }
+							?>
+								
+								</tbody>
+								</table>
+						</div>
+					</div>
                 </div>
 
 
@@ -140,6 +184,8 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                 <script src="assets/js/plugins/morris/raphael.min.js"></script>
                 <script src="assets/js/plugins/morris/morris.min.js"></script>
                 <script src="assets/js/plugins/morris/morris-data.js"></script>
+				
+				
 
 
                 <?php

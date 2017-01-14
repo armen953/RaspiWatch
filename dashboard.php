@@ -119,7 +119,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
 								<?php
 									if (isset($_SESSION['inscriptionOk']) AND isset($_SESSION['pseudoCree']) AND $userInfo['id'] == 6)  // test pour voir si un utilisateur a été crée
 									{
-											echo'<div class="alert alert-success" role="alert">L\'utilisateur '.$_SESSION['pseudoCree'].' à bien été crée</div>';
+											echo'<div class="alert alert-success" role="alert">L\'utilisateur '.$_SESSION['pseudoCree'].' a bien été crée</div>';
 											unset($_SESSION['inscriptionOk']);  //supprimer le variable de session
 											unset($_SESSION['pseudoCree']);	//supprimer le variable de session
 									}

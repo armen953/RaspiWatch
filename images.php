@@ -116,8 +116,8 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                         <div class="row">
                             <div class="col-lg-12">
                                 <h1 class="page-header">
-                            Visualisation des Images <small>Visionner les images prisent par les caméras</small>
-                        </h1>
+									Visualisation des Images <small>Visionner les images prisent par les caméras</small>
+								</h1>
                                 <ol class="breadcrumb">
                                     <li>
                                         <i class="glyphicon glyphicon-facetime-video"></i>
