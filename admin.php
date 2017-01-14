@@ -147,27 +147,53 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
 									<tbody>
 									
 							<?php 
+								// debut conversion date anglais en francais 
+								setlocale (LC_TIME, 'fr_FR','fra');
+								date_default_timezone_set("Europe/Paris");
+								mb_internal_encoding("UTF-8");
+								function dateFr($date){
+									return strftime('%d-%m-%Y',strtotime($date));
+								}
+								// fin
+								
+								//requete bdd
 								$reqAdmin = $bdd->getConnexion()->prepare('SELECT * FROM membre WHERE admin="0"');
 								$reqAdmin->execute();
 								$user = $reqAdmin->fetchAll(); 
 								foreach($user as $utilisateur)
 								 {
-									 $e="";
 									 // une ligne du tableau
+									 $date = dateFr($utilisateur['date_inscription']);
+					
 									 echo 
 									 ' 
 											<tr>
 												<td>'.$utilisateur['id'].'</td>
 												<td>'.$utilisateur['pseudo'].'</td>
-												<td>'.$utilisateur['date_inscription'].'</td>
+												<td>'.$date.'</td>
 												<td><button class="btn btn-danger btn-xs" value="'.$utilisateur['id'].'" id="delete" onClick="window.location=\'php/supprimerUtilisateur.php?id='.$utilisateur['id'].'&amp;del='.$utilisateur['pseudo'].'\';" data-title="Delete"data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
 											</tr>
 									';
 								 }
+								 
 							?>
-								
 								</tbody>
 								</table>
+								
+						<!-- 
+							    <div class="clearfix"></div>
+								<ul class="pagination pull-right">
+								  <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+								  <li class="active"><a href="#">1</a></li>
+								  <li><a href="#">2</a></li>
+								  <li><a href="#">3</a></li>
+								  <li><a href="#">4</a></li>
+								  <li><a href="#">5</a></li>
+								  <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+								</ul>
+						-->		
+								
+								
 						</div>
 					</div>
                 </div>
