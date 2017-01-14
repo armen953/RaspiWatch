@@ -138,10 +138,10 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
 								<table class="table">
 									<thead>
 										<tr>
-											<th>id utilisateur</th>
+											<th>ID de l'utilisateur</th>
 											<th>Pseudo</th>
 											<th>Date d'inscription</th>
-											<th>Supprimer lutilisateur<th>
+											<th>Supprimer l'utilisateur<th>
 										</tr>
 									</thead>
 									<tbody>
