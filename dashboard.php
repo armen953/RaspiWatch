@@ -75,7 +75,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $userInfo['pseudo'] ?> <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-								<?php 
+                                <?php 
 									if ($userInfo['id'] == 6){ 
 									echo '<li>';
 										echo '<a href="admin.php?id=6"><i class="glyphicon glyphicon-user"></i> Admin</a>';
@@ -85,10 +85,9 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
 									echo '</li>';
 									}
 								?>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="php/deconnexion.php"><i class="glyphicon glyphicon-off"></i> Déconnexion</a>
-                                </li>
+                                    <li>
+                                        <a href="php/deconnexion.php"><i class="glyphicon glyphicon-off"></i> Déconnexion</a>
+                                    </li>
                             </ul>
                         </li>
                     </ul>
@@ -116,7 +115,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                         <!-- Page Heading -->
                         <div class="row">
                             <div class="col-lg-12">
-								<?php
+                                <?php
 									if (isset($_SESSION['inscriptionOk']) AND isset($_SESSION['pseudoCree']) AND $userInfo['id'] == 6)  // test pour voir si un utilisateur a été crée
 									{
 											echo'<div class="alert alert-success" role="alert">L\'utilisateur '.$_SESSION['pseudoCree'].' a bien été crée</div>';
@@ -124,15 +123,14 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
 											unset($_SESSION['pseudoCree']);	//supprimer le variable de session
 									}
 								?>
-                                <h1 class="page-header">
+                                    <h1 class="page-header">
 									Caméra en Direct <small>Visionner le flux des caméras en direct</small>
 								</h1>
-                                <ol class="breadcrumb">
-                                    <li>
-                                        <i class="glyphicon glyphicon-facetime-video"></i>
-                                          Caméra en Direct
-                                    </li>
-                                </ol>
+                                    <ol class="breadcrumb">
+                                        <li>
+                                            <i class="glyphicon glyphicon-facetime-video"></i> Caméra en Direct
+                                        </li>
+                                    </ol>
                             </div>
                         </div>
 
