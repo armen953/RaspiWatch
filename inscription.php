@@ -47,7 +47,7 @@ if(isset($_POST['ok']))
         }
     }else
     {
-        $erreur = "Tous les champs doivent etre complétés ! ";
+        $erreur = "Tous les champs doivent être complétés ! ";
     }
 }              
 ?>
