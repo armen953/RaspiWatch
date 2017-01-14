@@ -122,7 +122,15 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
 											unset($_SESSION['imageDel']);  //supprimer le variable de session
 									}
 								?>
-                                <h1 class="page-header">
+								
+								<form class="navbar-form navbar-right inline-form" method="post" action="php/images.php" >
+								  <div class="form-group">
+									<input type="search" name="recherche" class="input-sm form-control" placeholder="Recherche" value="">
+									<button type="submit" name="valider" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button>
+								  </div>
+								</form>
+                                
+								<h1 class="page-header">
 									Visualisation des Images <small>Visionner les images prisent par les caméras</small>
 								</h1>
                                 <ol class="breadcrumb">
@@ -142,7 +150,13 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                         <div class="row">
                             <!-- mettre boucle ici fetch pour afficher toutes les images de la BDD-->
                             <?php
-                                $images = $bdd->getConnexion()->prepare('SELECT * FROM security');
+							
+								if(isset($_SESSION['req'])){
+									$images = $bdd->getConnexion()->prepare($_SESSION['req']);
+									unset($_SESSION['req']); 
+								}else{
+									$images = $bdd->getConnexion()->prepare('SELECT * FROM security');
+								}
                                 $images->execute();
                                 $image = $images->fetchAll();  
                                     
@@ -165,6 +179,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                     </div>
                                 ';
                                }  
+
                         ?>
 
 						
