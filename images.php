@@ -115,6 +115,13 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                         <!-- Page Heading -->
                         <div class="row">
                             <div class="col-lg-12">
+							<?php
+									if (isset($_SESSION['imageDel']) AND $userInfo['id'] == 6)  // test pour voir si l'image a été supprimé
+									{
+											echo'<div class="alert alert-success" role="alert">L\'image été supprimé</div>';
+											unset($_SESSION['imageDel']);  //supprimer le variable de session
+									}
+								?>
                                 <h1 class="page-header">
 									Visualisation des Images <small>Visionner les images prisent par les caméras</small>
 								</h1>
@@ -141,25 +148,28 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                     
                                 foreach($image as $img)
                                 { 
-                                    $lienImage = substr($img['filename'],19); //19-> pour /var/www/RaspiWatch/imgCamera1 // 8-> pour /var/www/imgCamera1
-
+                                    $lienImage = substr($img['filename'],29); //19-> pour /var/www/RaspiWatch/imgCamera1 // 8-> pour /var/www/imgCamera1
+									$nomimage = substr($img['filename'],40);  // a changer
+									$heureImage = $img['time_stamp'];
+									
                                 echo'<div class="col-sm-6 col-md-4">
                                     <div class="thumbnail">
-                                        <img src="..'.$lienImage.'" alt="..." > 
+                                        <img src="'.$lienImage.'" alt="..." > 
                                             <div class="caption text-center">
-                                                <h4>DATE ET HEURE IMAGE ICI</h4>
-                                                <p><a href="#" class="btn btn-primary" role="button">Enregistrer</a>
-                                                    <a href="#" class="btn btn-danger" role="button">Supprimer</a>
+                                                <h4>'.$heureImage.'</h4>
+                                                <p><a href="'.$img['filename'].'" download="'.$nomimage.'" class="btn btn-primary" role="button">Enregistrer</a>  
+                                                    <button href="#" class="btn btn-danger" onClick="window.location=\'php/supprimerImage.php?nom='.$img['filename'].'\';" role="button">Supprimer</button>
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                 ';
-                        
-
                                }  
                         ?>
 
+						
+					
+						
                         </div>
                     </div>
                 </div>
