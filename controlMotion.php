@@ -78,7 +78,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $userInfo['pseudo'] ?> <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-								<?php 
+                                <?php 
 									if ($userInfo['id'] == 6){ 
 									echo '<li>';
 										echo '<a href="admin.php?id=6"><i class="glyphicon glyphicon-user"></i> Admin</a>';
@@ -88,10 +88,9 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
 									echo '</li>';
 									}
 								?>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="php/deconnexion.php"><i class="glyphicon glyphicon-off"></i> Déconnexion</a>
-                                </li>
+                                    <li>
+                                        <a href="php/deconnexion.php"><i class="glyphicon glyphicon-off"></i> Déconnexion</a>
+                                    </li>
                             </ul>
                         </li>
                     </ul>
