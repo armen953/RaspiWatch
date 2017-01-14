@@ -71,7 +71,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                             <span class="icon-bar"></span>
                         </button>
 
-                        <a class="navbar-brand" href="#">RaspiWatch</a>
+                        <?php echo "<a class="."navbar-brand"." href="."dashboard.php?id=".$userInfo['id']?>>RaspiWatch</a>
                     </div>
 
                     <ul class="nav navbar-right top-nav">
