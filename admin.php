@@ -87,9 +87,9 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
 									echo '<li>';
 										echo '<a href="inscription.php"><i class="glyphicon glyphicon-plus"></i> Inscrire</a>';
 									echo '</li>';
+                                					echo '<li class="divider"></li>';										
 									}
 								?>
-                                <li class="divider"></li>
                                 <li>
                                     <a href="php/deconnexion.php"><i class="glyphicon glyphicon-off"></i> Déconnexion</a>
                                 </li>
