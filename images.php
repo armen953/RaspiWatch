@@ -155,23 +155,26 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
 									$images = $bdd->getConnexion()->prepare($_SESSION['req']);
 									unset($_SESSION['req']); 
 								}else{
-									$images = $bdd->getConnexion()->prepare('SELECT * FROM security');
+									$images = $bdd->getConnexion()->prepare('SELECT * FROM security order by id desc');
 								}
                                 $images->execute();
                                 $image = $images->fetchAll();  
                                     
                                 foreach($image as $img)
                                 { 
-                                    $lienImage = substr($img['filename'],29); //19-> pour /var/www/RaspiWatch/imgCamera1 // 8-> pour /var/www/imgCamera1
-									$nomimage = substr($img['filename'],40);  // a changer
+                                    $lienImage = substr($img['filename'],20); //19-> pour /var/www/RaspiWatch/imgCamera1 // 8-> pour /var/www/imgCamera1
+									$nomimage = substr($img['filename'],33);  // a changer
+//die($img['filename']);
 									$heureImage = $img['time_stamp'];
+									$lien = substr($img['filename'],20); 
+//die($lien);
 									
                                 echo'<div class="col-sm-6 col-md-4">
                                     <div class="thumbnail">
                                         <img src="'.$lienImage.'" alt="..." > 
                                             <div class="caption text-center">
                                                 <h4>'.$heureImage.'</h4>
-                                                <p><a href="'.$img['filename'].'" download="'.$nomimage.'" class="btn btn-primary" role="button">Enregistrer</a>  
+                                                <p><a href="'.$lien.'" download="'.$nomimage.'" class="btn btn-primary" role="button">Enregistrer</a>  
                                                     <button href="#" class="btn btn-danger" onClick="window.location=\'php/supprimerImage.php?nom='.$img['filename'].'\';" role="button">Supprimer</button>
                                                 </p>
                                             </div>

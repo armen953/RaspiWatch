@@ -167,7 +167,7 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
                                 <div class="panel-heading">
                                     <div class="row">
                                         <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="http://<?=$ip?>:8081" scrolling="no" frameborder="0" allowfullscreen></iframe>
+                                            <iframe class="embed-responsive-item" src="http://<?=$ip?>:8084" scrolling="no" frameborder="0" allowfullscreen></iframe>
                                         </div>
                                     </div>
                                 </div>
