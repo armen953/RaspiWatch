@@ -86,15 +86,13 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
 									echo '</li>';	
 									echo '<li>';
 										echo '<a href="inscription.php"><i class="glyphicon glyphicon-plus"></i> Inscrire</a>';
-									echo '</li>';
-                                									
+									echo '</li>';							
 									}
 								?>
-									<li>
-										<a href="parametres.php?id=<?= $userInfo['id']?> " ><i class="glyphicon glyphicon-wrench"></i> Paramètres</a>
-									</li>
-									<li class="divider"></li>
-									<li>
+								<li>
+                                    <a href="parametres.php?id=<?= $userInfo['id']?> " ><i class="glyphicon glyphicon-wrench"></i> Paramètres</a>
+                                </li>
+								<li class="divider"></li>
                                 <li>
                                     <a href="php/deconnexion.php"><i class="glyphicon glyphicon-off"></i> Déconnexion</a>
                                 </li>
@@ -124,79 +122,59 @@ if (isset($_GET['id']) AND $_GET['id'] > 0)  // verfier si la variable id existe
 							<div class="row">
 								<div class="col-lg-12">
 								
-								<?php
-									if (isset($_SESSION['suppOK']) AND isset($_SESSION['pseudoDelete']) AND $userInfo['id'] == 6)  // test pour voir si l'utilisateur a été supprimé
-									{
-											echo'<div class="alert alert-success" role="alert">L\'utilisateur '.$_SESSION['pseudoDelete'].' été supprimé</div>';
-											unset($_SESSION['suppOK']);  //supprimer le variable de session
-											unset($_SESSION['pseudoDelete']);	//supprimer le variable de session
-									}
-								?>
-								
 									<h1 class="page-header">
-										Admin <small>Dashboard Administrateur</small>
+										Paramètres <small>Changer Mot de passe</small>
 									</h1>
 								</div>	
 							</div>
-							
-							<div class="table-responsive">          
-								<table class="table">
-									<thead>
-										<tr>
-											<th>ID de l'utilisateur</th>
-											<th>Pseudo</th>
-											<th>Date d'inscription</th>
-											<th>Supprimer l'utilisateur<th>
-										</tr>
-									</thead>
-									<tbody>
-									
-							<?php 
-								// debut conversion date anglais en francais 
-								setlocale (LC_TIME, 'fr_FR','fra');
-								date_default_timezone_set("Europe/Paris");
-								mb_internal_encoding("UTF-8");
-								function dateFr($date){
-									return strftime('%d-%m-%Y',strtotime($date));
-								}
-								// fin
+																
+	
+								<div ng-app="sample">
+								   <form class="form-horizontal" name="registerForm" method="post" action="php/changerMdp.php" >
+								   <div class="form-group">
+									   <label class="col-md-3 control-label" for="pseudo">Pseudo</label>
+									   <div class="col-md-4">
+											<input type="text" class="form-control" name="pseudo" placeholder="Pseudo" value="<?=$userInfo['pseudo']?>" disabled/>
+									   </div>
+								   </div>
+								   <div class="form-group">
+									   <label class="col-md-3 control-label" for="Password">Ancien Mot de passe</label>
+									   <div class="col-md-4">
+									   <input type="password" class="form-control" name="ancienMdp" placeholder="Ancien mot de passe"  />
+									   </div> 
+								   </div>
+								   <div class="form-group">
+									   <label class="col-md-3 control-label" for="Password">Nouveau Mot de passe</label>
+									   <div class="col-md-4">
+									   <input type="password" class="form-control" name="password" placeholder="Nouveau mot de passe"  />
+									   </div> 
+								   </div>
+								   <div class="form-group">
+									   <label class="col-md-3 control-label" for="ConfirmPassword">Repeter le mot de passe</label>
+									   <div class="col-md-4">
+									   <input type="password" class="form-control" name="password2" placeholder="Repeter le mot de passe" />
+									   </div>
+								   </div>
+								   <div class="form-group">
+									   <div class="col-md-offset-3 col-md-9">
+									   <input type="submit" class="btn btn-default" value="Changer" name="ok"/>
+									   </div>
+								   </div>
+								   </form>
+								   <?php
+										if(isset($_SESSION['message']))
+										{
+											echo'<div class="alert alert-success" role="alert">'.$_SESSION['message'].'</div>';
+											unset($_SESSION['message']);
+										}
+										if(isset($_SESSION['erreur'])){
+											echo'<div class="alert alert-danger" role="alert">'.$_SESSION['erreur'].'</div>';
+											unset($_SESSION['erreur']);
+										}	
+								   ?>
+								</div>
 								
-								//requete bdd
-								$reqAdmin = $bdd->getConnexion()->prepare('SELECT * FROM membre WHERE admin="0"');
-								$reqAdmin->execute();
-								$user = $reqAdmin->fetchAll(); 
-								foreach($user as $utilisateur)
-								 {
-									 // une ligne du tableau
-									 $date = dateFr($utilisateur['date_inscription']);
-					
-									 echo 
-									 ' 
-											<tr>
-												<td>'.$utilisateur['id'].'</td>
-												<td>'.$utilisateur['pseudo'].'</td>
-												<td>'.$date.'</td>
-												<td><button class="btn btn-danger btn-xs" value="'.$utilisateur['id'].'" id="delete" onClick="window.location=\'php/supprimerUtilisateur.php?id='.$utilisateur['id'].'&amp;del='.$utilisateur['pseudo'].'\';" data-title="Delete"data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
-											</tr>
-									';
-								 }
-								 
-							?>
-								</tbody>
-								</table>
 								
-						<!-- 
-							    <div class="clearfix"></div>
-								<ul class="pagination pull-right">
-								  <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
-								  <li class="active"><a href="#">1</a></li>
-								  <li><a href="#">2</a></li>
-								  <li><a href="#">3</a></li>
-								  <li><a href="#">4</a></li>
-								  <li><a href="#">5</a></li>
-								  <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
-								</ul>
-						-->		
 								
 								
 						</div>
